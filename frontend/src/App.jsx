@@ -8,6 +8,8 @@ import Contact from "./pages/contact";
 import Product from "./pages/product";
 import Cart from "./pages/cart";
 import Login from "./pages/login";
+import PlaceOrder from "./pages/placeorder";
+import Order from "./pages/Order";
 
 
 
@@ -26,7 +28,7 @@ const App = () => {
         <Route path="/cart" element={<Cart />}></Route>
         <Route path="/login" element={<Login />}></Route>
         <Route path="/place-order" element={<PlaceOrder />}></Route>
-        <Route path="/orders" element={<Orders />}></Route>
+        <Route path="/orders" element={<Order />}></Route>
 
       </Routes>
     </div>

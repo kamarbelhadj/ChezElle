@@ -8,4 +8,4 @@ const PlaceOrder = () => {
   )
 }
 
-export default PlacOorder
+export default PlaceOrder
