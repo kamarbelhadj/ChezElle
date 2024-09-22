@@ -1,6 +1,6 @@
 import React from "react";
 import { Routes, Route } from "react-router-dom";
-import NavBar from "./components/NavBar";
+import NavBar from "./components/navBar";
 import Home from "./pages/home";
 import Collection from "./pages/collection";
 import About from "./pages/about";
@@ -10,11 +10,6 @@ import Cart from "./pages/cart";
 import Login from "./pages/login";
 import PlaceOrder from "./pages/placeorder";
 import Order from "./pages/Order";
-
-
-
-
-
 const App = () => {
   return (
     <div className="px-4 sm:px-[7vw] lg:px-[9vw]">
