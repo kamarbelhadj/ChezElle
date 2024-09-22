@@ -187,7 +187,7 @@ export const products = [
         price: 140,
         image: [p_img8],
         category: "Men",
-        subCategory: "Topwear",
+        subCategory: "T-shirts",
         sizes: ["S", "M", "L", "XL"],
         date: 1716622345448,
         bestseller: false
@@ -223,7 +223,7 @@ export const products = [
         price: 120,
         image: [p_img11],
         category: "Men",
-        subCategory: "Topwear",
+        subCategory: "T-shirt",
         sizes: ["S", "M", "L"],
         date: 1716623345448,
         bestseller: false
@@ -247,7 +247,7 @@ export const products = [
         price: 130,
         image: [p_img13],
         category: "Women",
-        subCategory: "Topwear",
+        subCategory: "T-shirt",
         sizes: ["S", "M", "L", "XL"],
         date: 1716625545448,
         bestseller: false
@@ -283,7 +283,7 @@ export const products = [
         price: 170,
         image: [p_img16],
         category: "Kids",
-        subCategory: "Topwear",
+        subCategory: "Pull",
         sizes: ["S", "M", "L", "XL"],
         date: 1716628845448,
         bestseller: false
@@ -295,7 +295,7 @@ export const products = [
         price: 150,
         image: [p_img17],
         category: "Men",
-        subCategory: "Bottomwear",
+        subCategory: "Pull",
         sizes: ["S", "M", "L", "XL"],
         date: 1716629945448,
         bestseller: false
