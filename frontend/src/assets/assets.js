@@ -53,6 +53,8 @@ import p_img49 from './p_img49.png'
 import p_img50 from './p_img50.png'
 import p_img51 from './p_img51.png'
 import p_img52 from './p_img52.png'
+import img771 from './img771.jpg';
+import img777 from './img777.jpg'
 
 
 import logo from './logo.png'
@@ -715,6 +717,18 @@ export const products = [
         image: [p_img52],
         category: "Men",
         subCategory: "Winterwear",
+        sizes: ["S", "M", "L", "XL"],
+        date: 1716668445448,
+        bestseller: false
+    },
+    {
+        _id: "aabbz",
+        name: "Robe pour femme disponible bleu et balnc",
+        description: "A lightweight, usually knitted, pullover shirt, close-fitting and with a round neckline and short sleeves, worn as an undershirt or outer garment.",
+        price: 250,
+        image: [img777,img771],
+        category: "Women",
+        subCategory: "Robes",
         sizes: ["S", "M", "L", "XL"],
         date: 1716668445448,
         bestseller: false
