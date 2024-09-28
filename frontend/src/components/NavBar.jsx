@@ -13,7 +13,7 @@ const NavBar = () => {
       
       <ul className="hidden sm:flex gap-10 text-sm text-gray-700 item7 items-center">
         <NavLink to="/" className="flex flex-col items-center gap-1">
-          <p>HOME</p>
+          <p>ACCUEIL</p>
           <hr className="w-2/4 border-none h-[1.5px] bg-gray-700" hidden />
         </NavLink>
         <NavLink
@@ -24,7 +24,7 @@ const NavBar = () => {
           <hr className="w-2/4 border-none h-[1.5px] bg-gray-700" hidden />
         </NavLink>
         <NavLink to="/about" className="flex flex-col items-center gap-1">
-          <p>ABOUT</p>
+          <p>CHEZELLE</p>
           <hr className="w-2/4 border-none h-[1.5px] bg-gray-700" hidden />
         </NavLink>
         <NavLink to="/contact" className="flex flex-col items-center gap-1">

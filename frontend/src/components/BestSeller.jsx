@@ -13,14 +13,14 @@ const BestSeller = () => {
       const bestProduct = products.filter((item) => (item.bestseller));
       setBestSeller(bestProduct.slice(0, 5));
     
-  }, []);
+  }, [products]);
 
   return (
     <div className='my-5'>
       <div className='text-center text-3xl py-8'>
-        <Title text1={'BEST'} text2={'SELLER'} />
+        <Title text1={'MEILLEURES'} text2={'VENTES'} />
         <p className='w-3/4 m-auto text-xs sm:text-sm md:text-base text-gray-600'>
-          Lorem, ipsum dolor sit amet consectetur adipisicing elit. Exercitationem ab expedita.
+        Les favoris de nos clients – faites partie des privilégiés et obtenez les vôtres avant qu'ils ne disparaissent 
         </p>
       </div>
 
@@ -31,7 +31,7 @@ const BestSeller = () => {
              <ProductItem
              key={index}
              id={item._id}
-             image={item.image}
+             images={item.images}
              name={item.name}
              price={item.price}
            />

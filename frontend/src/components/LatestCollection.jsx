@@ -10,14 +10,14 @@ const LatestCollection = () => {
   useEffect(() => {
     // Corrected slice method
     setLatestProducts(products.slice(0, 10));
-  }, []);
+  }, [products,latestProduct]);
 
   return (
     <div className='my-10'>
       <div className='text-center py-8 text-3xl'>
-        <Title text1={'LATEST'} text2={'COLLECTION'} />
+        <Title text1={'DERNIÈRE'} text2={'COLLECTION'} />
         <p className='w-3/4 m-auto text_xs sm:text-sm md:text-base text-gray-600'>
-          Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ratione doloremque maiores, sed.
+        Découvrez notre dernière collection et rafraîchissez votre garde-robe avec les tendances de la saison !
         </p>
       </div>
       {/* Rendering products */}
@@ -27,7 +27,7 @@ const LatestCollection = () => {
             <ProductItem
               key={index}
               id={item._id}
-              image={item.image}
+              images={item.images}
               name={item.name}
               price={item.price}
             />

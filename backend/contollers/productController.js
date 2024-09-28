@@ -4,7 +4,7 @@ import productModel from '../models/productModel.js';
 //function for add product 
 const addProduct = async (req,res)=>{
     try {
-        const {name , description , price , category , subCategory , uppersizes , lowersizes,color, bestseller} = req.body;
+        const {name , description , price , category , subCategory , sizes,color, bestseller} = req.body;
         const image1 =req.files.image1 &&  req.files.image1[0]
         const image2 =req.files.image2 &&  req.files.image2[0]
         const image3 =req.files.image3 &&  req.files.image3[0]
@@ -18,30 +18,24 @@ const addProduct = async (req,res)=>{
             })
         )
 
-        const parsedUpperSizes = uppersizes ? JSON.parse(uppersizes) : [];
-        const parsedLowerSizes = lowersizes ? JSON.parse(lowersizes) : [];
-        const parsedColor = color ? JSON.parse(color) : [];
-       const productData = {
+       
+        const parsedSizes = sizes ? JSON.parse(sizes) : [];
+        const productData = {
         name, 
         description,
         price : Number(price),
         images : imagesURl,
         category,
         subCategory,
-        uppersizes : parsedUpperSizes,
-        lowersizes : parsedLowerSizes ,
-        color : parsedColor,
+        sizes : parsedSizes,
         bestseller : bestseller === "true" ? true : false,
         date:Date.now()
      }
      const product = new productModel(productData);
      await product.save()
-        res.json({succes : true , message:"product added"});
-        
-        
+        res.json({success : true , message:"product added"}); 
     } catch (error) {
         console.log(error);
-        
         res.json({sucees:false , message:error.message})
         
     }
@@ -57,7 +51,7 @@ try {
     
 } catch (error) {
     console.log(error);    
-     res.json({sucees:false , message:error.message})
+     res.json({success:false , message:error.message})
 }
     
 }
