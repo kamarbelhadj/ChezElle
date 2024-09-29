@@ -36,13 +36,10 @@ const updateCart = async (req,res) =>{
     try {
         const {userId , itemId , size , quantity} = req.body
         const userData = await userModel.findById(userId) 
-        let cartData = updateCart.cartData
+        let cartData = userData.cartData
         cartData[itemId][size] = quantity;
         await userModel.findByIdAndUpdate(userId,{cartData})
         res.json ({success : true , message : 'panier modifié'})
-
-
-
         
     } catch (error) {
         console.log(error.message)
@@ -57,7 +54,6 @@ const getUserCart = async (req,res) =>{
    try {
     const {userId} = req.body ;
     const userData = await userModel.findById(userId)
-    const cartData = await  userData.cartData 
     res.json({success : true , cartData : userData.cartData })
 
     

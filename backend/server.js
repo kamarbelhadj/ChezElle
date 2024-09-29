@@ -6,6 +6,7 @@ import connectCloudinary from './config/couldinary.js'
 import userRouter from './routes/userRoute.js'
 import productRouter from './routes/productRoute.js'
 import cartRouter from './routes/cartRoute.js'
+import orderRouter from './routes/orderRoute.js'
 
 // app config 
 const app = express()
@@ -21,7 +22,9 @@ app.use(cors())
 app.get('/',(req,res)=>{
     res.send("Api  working")
 })
+
 app.use('/api/user', userRouter)
 app.use('/api/product',productRouter)
-app.listen(port,()=>console.log('server started on PORT : '+ port))
 app.use('/api/cart', cartRouter)
+app.use('/api/order',orderRouter)
+app.listen(port,()=>console.log('server started on PORT : '+ port))
