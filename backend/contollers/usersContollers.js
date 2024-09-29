@@ -4,13 +4,13 @@ import userModel from "../models/userModel.js";
 import jwt from "jsonwebtoken";
 
 const createToken = (id) => {
-  return jwt.sign({ id }, process.env.jwtSercer);
+  return jwt.sign({ id }, process.env.jwtSercert);
 };
 
 //Route for user login
 const loginUser = async (req, res) => {
   try {
-    const { email, password } = req.body;
+    const {email,password} = req.body;
     const user = await userModel.findOne({ email });
     if (!user) {
       return res.json({
@@ -21,7 +21,7 @@ const loginUser = async (req, res) => {
     const isMatch = await bcrypt.compare(password, user.password);
     if (isMatch) {
       const token = createToken(user._id);
-      res.json({ succes: true, token });
+      res.json({ success: true, token });
     } else {
       res.json({
         succes: false,
@@ -42,6 +42,7 @@ const registerUser = async (req, res) => {
     if (exists) {
       return (res.json({ success: false, message: "L'utilisateur existe déjà" }));
     }
+
     //valisating email formate and strong password
     if (!validator.isEmail(email)) {
       return (res.json({
