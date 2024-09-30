@@ -1,12 +1,14 @@
 import React, { useContext, useState } from 'react';
 import Title from '../components/Title';
-import CartTotal from '../components/CartTotal'; // Fixed typo in import
+import CartTotale from '../components/CartTotale'; 
 import { assets } from '../assets/assets';
 import { ShopContext } from '../context/ShopContext';
+import axios from 'axios';
+import { toast } from 'react-toastify';
 
 const PlaceOrder = () => {
   const [method, setMethod] = useState('cod');
-  const { navigate } = useContext(ShopContext);
+  const { navigate,backendUrl,token,cartItems,setCartItems,getCartAmount,delivery_fee,products } = useContext(ShopContext);
   
   const [formData, setFormData] = useState({
     firstName: '',
@@ -20,13 +22,49 @@ const PlaceOrder = () => {
     phone: ''
   });
 
+  const onSumbitHandler =  async (event) =>{
+    event.preventDefault()
+    try {
+      let orderItems=[]
+      for (const items in cartItems){
+        for (const item in cartItems[items]){
+          if(cartItems[items][item]>0){
+            const itemInfo = structuredClone(products.find(product =>product._id === items))
+            if(itemInfo){
+              itemInfo.size = item ;
+              itemInfo.quantity = cartItems[items][item];
+              orderItems.push(itemInfo)
+            }
+
+          }
+        }
+      }
+      let orderData = {
+        addresse : formData,
+        items : orderItems,
+        amount : getCartAmount() + delivery_fee
+      }
+
+      const response = await axios.post(backendUrl + '/api/order/place',orderData,{headers:{token}});
+      if (response.data.success){
+        setCartItems({})
+        navigate('/orders')
+        toast.success(response.data.message)
+      }else{
+        toast.error(response.data.message)
+      } 
+    } catch (error) {
+      console.log(error.message)
+    }
+  }
+
   const onChangeHandler = (event) => {
     const { name, value } = event.target; // Corrected 'targer' typo
     setFormData(data => ({ ...data, [name]: value }));
   };
 
   return (
-    <form className='flex flex-col sm:flex-row justify-between gap-4 pt-5 sm:pt-14 min-h-[88vh] border-t'>
+    <form onSubmit={onSumbitHandler} className='flex flex-col sm:flex-row justify-between gap-4 pt-5 sm:pt-14 min-h-[88vh] border-t'>
       {/*------------Left Side---------------*/}
       <div className='flex flex-col gap-4 w-full sm:max-w-[480px]'>
         <div className='text-xl sm:text-2xl my-3'>
@@ -128,7 +166,7 @@ const PlaceOrder = () => {
       {/*--------------Right Side-------------*/}
       <div className='mt-8'>
         <div className='mt-8 min-w-80'>
-          <CartTotal />
+          <CartTotale />
         </div>
         <div className='mt-12'>
           <Title text1={'MODE'} text2={'DE PAIEMENT'} />
