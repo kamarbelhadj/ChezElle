@@ -63,7 +63,7 @@ const userOrders = async ( req,res) =>{
 const updateStatus = async ( req,res) =>{
     try {
         const {orderId , status} = req.body
-        await orderModel.findByIdAndUpdate(orderId,status)
+        await orderModel.findByIdAndUpdate(orderId,{status},{new: true})
         res.json({
             success : true , message : 'status updated'
         })

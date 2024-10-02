@@ -100,43 +100,43 @@ const Collection = () => {
           <p className='mb-3 text-sm font-medium'>SOUS-CATÉGORIES</p>
           <div className='flex flex-col gap-2 text-sm font-light text-gray-700'>
             <label className='flex gap-2'>
-              <input type="checkbox" className='w-3' value='Robes' onChange={toggleSubCategory} /> Robes
+              <input type="checkbox" className='w-3' value='robe' onChange={toggleSubCategory} /> Robes
             </label>
             <label className='flex gap-2'>
-              <input type="checkbox" className='w-3' value='Blazers' onChange={toggleSubCategory} /> Blazers
+              <input type="checkbox" className='w-3' value='blazers' onChange={toggleSubCategory} /> Blazers
             </label>
             <label className='flex gap-2'>
-              <input type="checkbox" className='w-3' value='Tshirts' onChange={toggleSubCategory} /> T-shirts
+              <input type="checkbox" className='w-3' value='t_shirts' onChange={toggleSubCategory} /> T-shirts
             </label>
             <label className='flex gap-2'>
-              <input type="checkbox" className='w-3' value='Chemise' onChange={toggleSubCategory} /> Chemise
+              <input type="checkbox" className='w-3' value='chemise' onChange={toggleSubCategory} /> Chemise
             </label>
             <label className='flex gap-2'>
-              <input type="checkbox" className='w-3' value='Pantalons' onChange={toggleSubCategory} /> Pantalons
+              <input type="checkbox" className='w-3' value='pantalons' onChange={toggleSubCategory} /> Pantalons
             </label>
             <label className='flex gap-2'>
-              <input type="checkbox" className='w-3' value='Jeans' onChange={toggleSubCategory} /> Jeans
+              <input type="checkbox" className='w-3' value='jeans' onChange={toggleSubCategory} /> Jeans
             </label>
             <label className='flex gap-2'>
-              <input type="checkbox" className='w-3' value='Jupes' onChange={toggleSubCategory} /> Jupes
+              <input type="checkbox" className='w-3' value='jupes' onChange={toggleSubCategory} /> Jupes
             </label>
             <label className='flex gap-2'>
-              <input type="checkbox" className='w-3' value='Gilets' onChange={toggleSubCategory} /> Gilets
+              <input type="checkbox" className='w-3' value='gilets' onChange={toggleSubCategory} /> Gilets
             </label>
             <label className='flex gap-2'>
-              <input type="checkbox" className='w-3' value='Pull' onChange={toggleSubCategory} /> Pull
+              <input type="checkbox" className='w-3' value='pull' onChange={toggleSubCategory} /> Pull
             </label>
             <label className='flex gap-2'>
-              <input type="checkbox" className='w-3' value='Chaussures' onChange={toggleSubCategory} /> Chaussures
+              <input type="checkbox" className='w-3' value='chaussures' onChange={toggleSubCategory} /> Chaussures
             </label>
             <label className='flex gap-2'>
-              <input type="checkbox" className='w-3' value='Sac' /> Sac
+              <input type="checkbox" className='w-3' value='sac' /> Sac
             </label>
             <label className='flex gap-2'>
               <input type="checkbox" className='w-3' value='Accessoires' onChange={toggleSubCategory} /> Accessoires
             </label>
             <label className='flex gap-2'>
-              <input type="checkbox" className='w-3' value='Ensembles' onChange={toggleSubCategory} /> Ensembles
+              <input type="checkbox" className='w-3' value='ensembles' onChange={toggleSubCategory} /> Ensembles
             </label>
           </div>
         </div>
