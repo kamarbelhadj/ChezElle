@@ -30,14 +30,14 @@ const Cart = () => {
     <div className="border-t pt-14">
       <div className="text-2xl mb-3">
         <Title text1={"VOTRE"} text2={"PANIER"}></Title>{" "}
-        {/* Fixed 'TOUR' to 'YOUR' */}
+        
       </div>
       <div>
         {cartData.map((item, index) => {
           const productData = products.find(
             (product) => product._id === item._id
           );
-          if (!productData) return null; // Check if product exists
+          if (!productData) return null; 
           return (
             <div
               key={index}

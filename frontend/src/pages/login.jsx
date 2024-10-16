@@ -5,7 +5,7 @@ import { toast } from "react-toastify";
 import { useNavigate } from "react-router-dom"; // Import useNavigate
 
 const Login = () => {
-  const [currentState, setCurrentState] = useState('Login'); 
+  const [currentState, setCurrentState] = useState('Se connecter'); 
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
@@ -51,7 +51,7 @@ const Login = () => {
         <p className='prata-regular text-3xl'>{currentState}</p>
         <hr className='border-none h-[1.5px] w-8 bg-gray-800' />
       </div>
-      {currentState === 'Login' ? '' : (
+      {currentState === 'Se connecter' ? '' : (
         <input
           onChange={(e) => setName(e.target.value)}
           value={name}
@@ -78,15 +78,15 @@ const Login = () => {
         required
       />
       <div className='w-full flex justify-between text-sm mt-[-8px]'>
-        <p className='cursor-pointer'>Forget your password</p>
-        {currentState === 'Login' ? (
-          <p className='cursor-pointer' onClick={() => setCurrentState('Sign Up')}>Create Account</p>
+        <p className='cursor-pointer'>Oubliez votre mot de passe</p>
+        {currentState === 'Se connecter' ? (
+          <p className='cursor-pointer' onClick={() => setCurrentState('Sign Up')}>Créer un compte</p>
         ) : (
-          <p className='cursor-pointer' onClick={() => setCurrentState('Login')}>Login</p>
+          <p className='cursor-pointer' onClick={() => setCurrentState('Se connecter')}>Se connecter</p>
         )}
       </div>
       <button className='bg-black text-white font-light px-8 py-2 mt-4'>
-        {currentState === 'Login' ? 'Sign In' : 'Sign Up'}
+        {currentState === 'Se connecter' ? 'Sign In' : 'Sign Up'}
       </button>
     </form>
   );
