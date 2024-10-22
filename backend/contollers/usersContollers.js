@@ -66,7 +66,7 @@ const registerUser = async (req, res) => {
       password: hashedPassword,
     });
     const user = await newUser.save();
-    console.log("New user registered: ", user);
+    //console.log("New user registered: ", user);
     const token = createToken(user._id);
     res.json({
       success: true,
@@ -96,5 +96,6 @@ const adminLogin = async (req, res) => {
     
   }
 };
+
 
 export { loginUser, registerUser, adminLogin };

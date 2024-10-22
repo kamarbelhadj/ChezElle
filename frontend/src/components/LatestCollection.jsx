@@ -8,7 +8,6 @@ const LatestCollection = () => {
   const [latestProduct, setLatestProducts] = useState([]);
 
   useEffect(() => {
-    // Corrected slice method
     setLatestProducts(products.slice(0, 10));
   }, [products]);
 

@@ -15,7 +15,7 @@ const Login = () => {
   const onSubmitHandler = async (event) => {
     event.preventDefault();
     try {
-      if (currentState === 'Sign Up') {
+      if (currentState === 'S’enregistrer') {
         const response = await axios.post(backendUrl + '/api/user/register', { name, email, password });
         
         if (response.data.success) {
@@ -80,13 +80,13 @@ const Login = () => {
       <div className='w-full flex justify-between text-sm mt-[-8px]'>
         <p className='cursor-pointer'>Oubliez votre mot de passe</p>
         {currentState === 'Se connecter' ? (
-          <p className='cursor-pointer' onClick={() => setCurrentState('Sign Up')}>Créer un compte</p>
+          <p className='cursor-pointer' onClick={() => setCurrentState('S’enregistrer')}>Créer un compte</p>
         ) : (
           <p className='cursor-pointer' onClick={() => setCurrentState('Se connecter')}>Se connecter</p>
         )}
       </div>
       <button className='bg-black text-white font-light px-8 py-2 mt-4'>
-        {currentState === 'Se connecter' ? 'Sign In' : 'Sign Up'}
+        {currentState === 'Se connecter' ? 'Connexion' : 'S’enregistrer'}
       </button>
     </form>
   );

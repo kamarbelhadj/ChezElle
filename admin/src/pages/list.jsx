@@ -13,13 +13,11 @@ const List = ({token}) => {
       const response = await axios.get(backendUrl + '/api/product/list',{headers:{token}})
       
       if(response.data.success){
-        setList(response.data.products) 
+       const sortedList = response.data.products.sort((a,b) => new Date(b.date) - new Date(a.date));
+       setList(sortedList) ;
       }else {
-        
         toast.error(response.data.message)
       }
-     
-      
     } catch (error) {
       console.log(error.message)
       toast.error(error.message)

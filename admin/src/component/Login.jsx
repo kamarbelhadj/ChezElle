@@ -39,11 +39,11 @@ const Login = ({setToken}) => {
             <form onSubmit={onSubmitHandler}>
                 <div className='mb-3 min-w-72'>
                     <p className='text-sm font-medium text-gray-700 mb-2' >Adresse Email</p>
-                    <input onChange={(e)=>setEmail(e.target.value)} className='rounded-md w-full px-3 py-2 border border-gary-300 outline-none' type="email" placeholder='your@email.com' required/>
+                    <input onChange={(e)=>setEmail(e.target.value)} className='rounded-md w-full px-3 py-2 border border-gary-300 outline-none' type="email" placeholder='votre@email.com' required/>
                 </div>
                 <div className='mb-3 min-w-72'>
                     <p className='text-sm font-medium text-gray-700 mb-2'>Mot de passe</p>
-                    <input onChange={(e)=>setpassword(e.target.value)} className='rounded-md w-full px-3 py-2 border border-gary-300 outline-none' type="password" placeholder='enter your password' required/>
+                    <input onChange={(e)=>setpassword(e.target.value)} className='rounded-md w-full px-3 py-2 border border-gary-300 outline-none' type="password" placeholder='Entrez votre mot de passe' required/>
                 </div>
                 <button className='mt-2 w-full py-2 px-4 rounded-md text-white bg-black' type='submit'>Connectez-vous</button>
             </form>

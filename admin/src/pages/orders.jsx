@@ -23,7 +23,7 @@ const Orders = ({ token }) => {
       if (response.data.success) {
         const sortedOrders = response.data.orders.sort((a, b) => new Date(b.date) - new Date(a.date));
         setOrders(sortedOrders);
-        setFilteredOrders(sortedOrders); // Initialize filtered orders with all orders
+        setFilteredOrders(sortedOrders); 
       } else {
         toast.error(response.data.message);
       }

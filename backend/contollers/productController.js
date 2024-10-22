@@ -33,7 +33,7 @@ const addProduct = async (req,res)=>{
      }
      const product = new productModel(productData);
      await product.save()
-        res.json({success : true , message:"product added"}); 
+        res.json({success : true , message:"Produit ajouté"}); 
     } catch (error) {
         console.log(error);
         res.json({sucees:false , message:error.message})
@@ -66,7 +66,7 @@ const removeProduct = async (req, res) => {
     if (!mongoose.Types.ObjectId.isValid(id)) {
       return res.json({
         success: false,
-        message: "Invalid product ID format",
+        message: "Format d’ID de produit non valide",
       });
     }
 

@@ -45,7 +45,6 @@ const ShopContextProvider = (props) => {
     }
   };
 
-  // Get the total number of items in the cart
   const getCartCount = () => {
     return Object.values(cartItems).reduce((total, sizes) => {
       return (
@@ -55,13 +54,12 @@ const ShopContextProvider = (props) => {
     }, 0);
   };
 
-  // Update item quantity in the cart
   const updateQuantity = async (itemId, size, quantity) => {
     let cartData = structuredClone(cartItems);
     if (quantity === 0) {
       delete cartData[itemId][size];
       if (Object.keys(cartData[itemId]).length === 0) {
-        delete cartData[itemId]; // Remove the item if no sizes remain
+        delete cartData[itemId]; 
       }
     } else {
       cartData[itemId][size] = quantity;
@@ -82,7 +80,7 @@ const ShopContextProvider = (props) => {
     }
   };
 
-  // Get the total amount in the cart
+  
   const getCartAmount = () => {
     let totalAmount = 0;
     for (const itemId in cartItems) {
@@ -97,12 +95,12 @@ const ShopContextProvider = (props) => {
     return totalAmount;
   };
 
-  // Fetch product data
   const getProductsData = async () => {
     try {
       const response = await axios.get(backendUrl + "/api/product/list");
       if (response.data.success) {
-        setProducts(response.data.products);
+        const sortedProducts = response.data.products.sort((a,b) => new Date(b.date) - new Date(a.date))
+        setProducts(sortedProducts);
       } else {
         toast.error(response.data.message);
       }
@@ -112,7 +110,7 @@ const ShopContextProvider = (props) => {
     }
   };
 
-  // Fetch user's cart data
+
   const getUserCart = async (token) => {
     if (!token) return;
     try {
@@ -132,7 +130,7 @@ const ShopContextProvider = (props) => {
     }
   };
 
-  // Load token and cart data when the component mounts
+
   useEffect(() => {
     const localToken = localStorage.getItem("token");
     if (localToken) {
@@ -140,14 +138,13 @@ const ShopContextProvider = (props) => {
     }
   }, []);
 
-  // Fetch cart data when token changes
   useEffect(() => {
     if (token) {
       getUserCart(token);
     }
   }, [token]);
 
-  // Fetch product data once
+  
   useEffect(() => {
     getProductsData();
   }, []);
