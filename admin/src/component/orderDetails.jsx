@@ -17,8 +17,8 @@ const OrderDetails = () => {
               src={item.images[0]} // Show only the first image
               alt={item.name} 
             />
-            <p className="text-gray-700 mb-1">Quantity: <span className="font-medium">{item.quantity}</span></p>
-            <p className="text-gray-700">Size: <span className="font-medium">{item.size}</span></p>
+            <p className="text-gray-700 mb-1">Quantité: <span className="font-medium">{item.quantity}</span></p>
+            <p className="text-gray-700">Taille: <span className="font-medium">{item.size}</span></p>
           </div>
         ))}
       </div>

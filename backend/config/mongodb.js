@@ -4,6 +4,7 @@ const connectDB = async ()=>{
         console.log('DB connected')
     })
     await mongoose.connect(`${process.env.MONGODB_URL}/chezelle`)
+    
 
 }
-export default connectDB 
+export default connectDB ;
